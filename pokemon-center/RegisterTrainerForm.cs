@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pokemon_center
 {
-    public partial class Form1 : Form
+    public partial class RegisterTrainerForm : Form
     {
-        public Form1()
+        public RegisterTrainerForm()
         {
             InitializeComponent();
         }
