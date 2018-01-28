@@ -16,7 +16,7 @@ namespace pokemon_center
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NurseForm());
+            Application.Run(new LoginForm());
         }
     }
 }
