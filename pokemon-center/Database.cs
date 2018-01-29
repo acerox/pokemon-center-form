@@ -37,7 +37,7 @@ namespace pokemon_center
 
         public Boolean existUser(string username, string password)
         {
-            lastSqlCommand = new MySqlCommand("SELECT nurse.username, nurse.password FROM nurse WHERE username ='" + username + "' AND password ='" + password + "'");
+            lastSqlCommand = new MySqlCommand("SELECT nurse.username, nurse.password FROM nurse WHERE username ='" + username + "' AND password ='" + password + "'", connection);
 
             DataTable data = new DataTable();
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(lastSqlCommand);
@@ -51,33 +51,19 @@ namespace pokemon_center
             lastSqlCommand = new MySqlCommand("SELECT * FROM trainer", connection);
             result = lastSqlCommand.ExecuteReader();
 
-            data.Load(result);
+          
 
             return data;
         }
 
         private void openConnection()
         {
-            try
-            {
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No ha sido posible conectarse a la base de datos" + ex.ToString());
-            }
+            connection.Open();
         }
 
         private void closeConnection()
         {
-            try
-            {
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No ha sido posible cerrar la conexion de la base de datos" + ex.ToString());
-            }
+            connection.Close();
         }
 
         private void executeQuery(string sql)

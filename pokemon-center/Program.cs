@@ -19,7 +19,7 @@ namespace pokemon_center
             Application.Run(new LoginForm(
                 new Database(
                     new MySql.Data.MySqlClient.MySqlConnection(
-                        "Server = 127.0.0.1; Database = pokemon_center; Uid = root; Pwd =root; Port = 3306"
+                        "Server = 127.0.0.1; Database = pokemon_center; Uid = root; Pwd =; Port = 3306"
                     ))));
         }
     }

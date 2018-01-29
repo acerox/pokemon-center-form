@@ -96,7 +96,7 @@
             // 
             this.exitPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.exitPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("exitPictureBox.Image")));
-            this.exitPictureBox.Location = new System.Drawing.Point(271, 18);
+            this.exitPictureBox.Location = new System.Drawing.Point(276, 15);
             this.exitPictureBox.Name = "exitPictureBox";
             this.exitPictureBox.Size = new System.Drawing.Size(13, 13);
             this.exitPictureBox.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             this.minimizePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.minimizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("minimizePictureBox.Image")));
-            this.minimizePictureBox.Location = new System.Drawing.Point(252, 18);
+            this.minimizePictureBox.Location = new System.Drawing.Point(257, 15);
             this.minimizePictureBox.Name = "minimizePictureBox";
             this.minimizePictureBox.Size = new System.Drawing.Size(13, 13);
             this.minimizePictureBox.TabIndex = 7;
@@ -125,7 +125,7 @@
             this.panel1.Controls.Add(this.exitPictureBox);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 41);
+            this.panel1.Size = new System.Drawing.Size(301, 40);
             this.panel1.TabIndex = 8;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -148,7 +148,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(57, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(57, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(184, 89);
             this.pictureBox1.TabIndex = 10;

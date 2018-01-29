@@ -91,7 +91,11 @@ namespace pokemon_center
             if (database.existUser(usernameBox.Text, passwordBox.Text))
             {
                 this.Hide();
-                new NurseForm(database).Show();   
+                new NurseForm(database).Show();
+            }
+            else
+            {
+                MessageBox.Show("El usuario y/o la contraseña son incorrectos o no existen en el servidor");
             }
         }
 
