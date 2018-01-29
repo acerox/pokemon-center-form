@@ -16,7 +16,11 @@ namespace pokemon_center
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoginForm(
+                new Database(
+                    new MySql.Data.MySqlClient.MySqlConnection(
+                        "Server = 127.0.0.1; Database = pokemon_center; Uid = root; Pwd =root; Port = 3306"
+                    ))));
         }
     }
 }

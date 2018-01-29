@@ -13,27 +13,12 @@ namespace pokemon_center
 {
     public partial class RegisterNurseForm : Form
     {
-        private MySqlConnection conexion;
-        private MySqlCommand comando;
+        private Database database;
 
-        public RegisterNurseForm()
+        public RegisterNurseForm(Database database)
         {
             InitializeComponent();
-            connectDatabase();
-        }
-
-        private void connectDatabase()
-        {
-            conexion = new MySqlConnection("Server = 127.0.0.1; Database = pokemon_center; Uid = root; Pwd =; Port = 3306");
-
-            try
-            {
-                conexion.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Base de datos: Error al conectar con la base de datos");
-            }
+            this.database = database;
         }
 
         private Int32 getPokemonCenterId()
@@ -51,42 +36,50 @@ namespace pokemon_center
 
         private void registerButtonClick(object sender, EventArgs e)
         {
+            if (!checkTextboxs())
+            {
+                registNewUser();
+            }
+        }
+
+        private void registNewUser()
+        {
             try
             {
-                if (passwordBox.Text.Equals(passwordConfirmBox.Text))
-                {
-                    try
-                    {
-                        comando = new MySqlCommand(
-                            "INSERT INTO nurse(id_center, username, password) VALUES(" + getPokemonCenterId() + ", '" + usernameBox.Text + "', '" + passwordBox.Text + "')", 
-                            conexion
-                        );
-
-                        comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Usuario registrado");
-
-                        this.Hide();
-                        conexion.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Base de datos: No ha sido posible registrar al usuario, error en la conexión" + ex.ToString());
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Formulario: Las contraseñas no coinciden");
-                }
-
-
+                database.createNewNurse(usernameBox.Text, getPokemonCenterId(), passwordBox.Text);
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Base de datos: No se pudo conectar a la bbdd" + ex.ToString() + ex.HResult); //+ ex.ToString() + ex.HResult
+                MessageBox.Show("No ha sido posible registrar al nuevo usuario" + ex.ToString());
             }
-            conexion.Close();
+            
+            MessageBox.Show("Nuevo usuario registrado");
+            this.Close();
+        }
+
+        private Boolean checkTextboxs()
+        {
+            Boolean errorTextBox = false;
+
+            if (usernameBox.Text.Equals(""))
+            {
+                MessageBox.Show("Porfavor, rellena el campo usuario");
+                errorTextBox = true;
+
+            }
+            else if (centerComboBox.Text.Equals(""))
+            {
+                MessageBox.Show("Debes escoger un centro en el que te encuentras");
+                errorTextBox = true;
+            }
+            else if (passwordBox.Text.Equals(passwordConfirmBox.Text))
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+                errorTextBox = true;
+            }
+
+            return errorTextBox;
         }
 
         private void cleanButtonClick(object sender, EventArgs e)

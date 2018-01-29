@@ -14,70 +14,22 @@ namespace pokemon_center
     public partial class LoginForm : Form
     {
         // Movimientos de la ventana
-        private int ex;
-
+        private int mousePositionX;
+        private int mousePositionY;
         public bool windowMovement = false;
+        
+        // Base de datos
+        private Database database;
 
-        private int ey;
-
-        private string connStr;
-
-        //variable que maneja la conexion
-        private MySqlConnection conexion;
-
-        //variable para almacenar la consulta a la bbdd
-        private String sentenciaSQL;
-
-        //variable que sirve para crear la conexion
-        private static MySqlCommand comando;
-
-        //guarda el resultado de la consulta
-        private MySqlDataReader resultado;
-
-        //pone el resultado de la bbdd en esta variable
-        private DataTable datos = new DataTable();
-
-        private int contadorFila = 0;
-        private int numeroFilas = 0;
-
-        public LoginForm()
+        public LoginForm(Database database)
         {
             InitializeComponent();
-
-            conexion = new MySqlConnection("Server = 127.0.0.1; Database = pokemon_center; Uid = root; Pwd =; Port = 3306");
-            try
-            {
-                conexion.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Base de datos: Los datos de inicio de sesión son incorrectos");
-            }
-        }
-
-        private void connectButtonClick(object sender, EventArgs e)
-        {
-            //  PARA EL NOMBRE DE USUARIO
-            comando = new MySqlCommand("SELECT nurse.username, nurse.password FROM nurse WHERE username ='" + usernameBox.Text + "' AND password ='" + passwordBox.Text + "'", conexion);
-
-            MySqlDataAdapter adaptaDatos = new MySqlDataAdapter(comando);
-            adaptaDatos.Fill(datos);
-
-            if (datos.Rows.Count == 1)
-            {
-                this.Hide();
-                new NurseForm().Show();
-                conexion.Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos");
-            }
+            this.database = database;
         }
 
         private void RegisterLinkClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new RegisterNurseForm().Show();
+            new RegisterNurseForm(database).Show();
         }
 
         private void exitPictureBox_Click(object sender, EventArgs e)
@@ -92,8 +44,8 @@ namespace pokemon_center
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            this.ex = e.X;
-            this.ey = e.Y;
+            this.mousePositionX = e.X;
+            this.mousePositionY = e.Y;
             this.windowMovement = true;
         }
 
@@ -103,12 +55,10 @@ namespace pokemon_center
             {
                 this.Location =
                     this.PointToScreen(new Point(
-                        Cursor.Position.X - this.Location.X - ex, 
-                        Cursor.Position.Y - this.Location.Y - ey
+                        Cursor.Position.X - this.Location.X - mousePositionX, 
+                        Cursor.Position.Y - this.Location.Y - mousePositionY
                     ));
             }
-
-            // If arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex, Me.MousePosition.Y - Me.Location.Y - ey))
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
@@ -138,21 +88,10 @@ namespace pokemon_center
 
         private void connectPictureBox_Click(object sender, EventArgs e)
         {
-            //  PARA EL NOMBRE DE USUARIO
-            comando = new MySqlCommand("SELECT nurse.username, nurse.password FROM nurse WHERE username ='" + usernameBox.Text + "' AND password ='" + passwordBox.Text + "'", conexion);
-
-            MySqlDataAdapter adaptaDatos = new MySqlDataAdapter(comando);
-            adaptaDatos.Fill(datos);
-
-            if (datos.Rows.Count == 1)
+            if (database.existUser(usernameBox.Text, passwordBox.Text))
             {
                 this.Hide();
-                new NurseForm().Show();
-                conexion.Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos");
+                new NurseForm(database).Show();   
             }
         }
 
@@ -163,7 +102,7 @@ namespace pokemon_center
 
         private void registerPictureBox_Click(object sender, EventArgs e)
         {
-            new RegisterNurseForm().Show();
+            new RegisterNurseForm(database).Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
