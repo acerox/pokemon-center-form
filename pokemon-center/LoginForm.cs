@@ -99,19 +99,59 @@ namespace pokemon_center
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            connectPictureBox_Click(sender, e);
-        }
-
         private void registerPictureBox_Click(object sender, EventArgs e)
         {
             new RegisterNurseForm(database).Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void connectPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            connectPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+        }
+
+        private void connectPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            connectPictureBox.Load(Application.StartupPath + "/images/login/button.png");
+        }
+
+        private void connectLabel_MouseHover(object sender, EventArgs e)
+        {
+            connectPictureBox_MouseHover(sender, e);
+        }
+
+        private void connectLabel_MouseLeave(object sender, EventArgs e)
+        {
+            connectPictureBox_MouseLeave(sender, e);
+        }
+
+        private void registerPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            registerPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+        }
+
+        private void registerPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            registerPictureBox.Load(Application.StartupPath + "/images/login/button.png");
+        }
+
+        private void connectLabel_Click(object sender, EventArgs e)
+        {
+            connectPictureBox_Click(sender, e);
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
         {
             registerPictureBox_Click(sender, e);
+        }
+
+        private void registerLabel_MouseHover(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseHover(sender, e);
+        }
+
+        private void registerLabel_MouseLeave(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseLeave(sender, e);
         }
     }
 }

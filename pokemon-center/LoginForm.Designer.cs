@@ -40,8 +40,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.connectPictureBox = new System.Windows.Forms.PictureBox();
             this.registerPictureBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.registerLabel = new System.Windows.Forms.Label();
+            this.connectLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -158,12 +158,14 @@
             // 
             this.connectPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.connectPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("connectPictureBox.BackgroundImage")));
-            this.connectPictureBox.Location = new System.Drawing.Point(158, 264);
+            this.connectPictureBox.Location = new System.Drawing.Point(157, 264);
             this.connectPictureBox.Name = "connectPictureBox";
             this.connectPictureBox.Size = new System.Drawing.Size(90, 35);
             this.connectPictureBox.TabIndex = 11;
             this.connectPictureBox.TabStop = false;
             this.connectPictureBox.Click += new System.EventHandler(this.connectPictureBox_Click);
+            this.connectPictureBox.MouseLeave += new System.EventHandler(this.connectPictureBox_MouseLeave);
+            this.connectPictureBox.MouseHover += new System.EventHandler(this.connectPictureBox_MouseHover);
             // 
             // registerPictureBox
             // 
@@ -175,31 +177,37 @@
             this.registerPictureBox.TabIndex = 12;
             this.registerPictureBox.TabStop = false;
             this.registerPictureBox.Click += new System.EventHandler(this.registerPictureBox_Click);
+            this.registerPictureBox.MouseLeave += new System.EventHandler(this.registerPictureBox_MouseLeave);
+            this.registerPictureBox.MouseHover += new System.EventHandler(this.registerPictureBox_MouseHover);
             // 
-            // label2
+            // registerLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 273);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Registro";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.registerLabel.AutoSize = true;
+            this.registerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.registerLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerLabel.Location = new System.Drawing.Point(71, 273);
+            this.registerLabel.Name = "registerLabel";
+            this.registerLabel.Size = new System.Drawing.Size(57, 17);
+            this.registerLabel.TabIndex = 13;
+            this.registerLabel.Text = "Registro";
+            this.registerLabel.Click += new System.EventHandler(this.registerLabel_Click);
+            this.registerLabel.MouseLeave += new System.EventHandler(this.registerLabel_MouseLeave);
+            this.registerLabel.MouseHover += new System.EventHandler(this.registerLabel_MouseHover);
             // 
-            // label3
+            // connectLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(172, 273);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Conectar";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.connectLabel.AutoSize = true;
+            this.connectLabel.BackColor = System.Drawing.Color.Transparent;
+            this.connectLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connectLabel.Location = new System.Drawing.Point(172, 273);
+            this.connectLabel.Name = "connectLabel";
+            this.connectLabel.Size = new System.Drawing.Size(60, 17);
+            this.connectLabel.TabIndex = 14;
+            this.connectLabel.Text = "Conectar";
+            this.connectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.connectLabel.Click += new System.EventHandler(this.connectLabel_Click);
+            this.connectLabel.MouseLeave += new System.EventHandler(this.connectLabel_MouseLeave);
+            this.connectLabel.MouseHover += new System.EventHandler(this.connectLabel_MouseHover);
             // 
             // LoginForm
             // 
@@ -207,8 +215,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(300, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.connectLabel);
+            this.Controls.Add(this.registerLabel);
             this.Controls.Add(this.registerPictureBox);
             this.Controls.Add(this.connectPictureBox);
             this.Controls.Add(this.pictureBox1);
@@ -246,8 +254,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox connectPictureBox;
         private System.Windows.Forms.PictureBox registerPictureBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label registerLabel;
+        private System.Windows.Forms.Label connectLabel;
     }
 }
 

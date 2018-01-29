@@ -37,11 +37,15 @@ namespace pokemon_center
 
         public Boolean existUser(string username, string password)
         {
+            openConnection();
+
             lastSqlCommand = new MySqlCommand("SELECT nurse.username, nurse.password FROM nurse WHERE username ='" + username + "' AND password ='" + password + "'", connection);
 
             DataTable data = new DataTable();
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(lastSqlCommand);
             dataAdapter.Fill(data);
+
+            closeConnection();
 
             return data.Rows.Count == 1;
         }

@@ -147,6 +147,9 @@
     <Content Include="images\login\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\login\button-hover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\login\button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
