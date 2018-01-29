@@ -73,7 +73,7 @@ namespace pokemon_center
                 MessageBox.Show("Debes escoger un centro en el que te encuentras");
                 errorTextBox = true;
             }
-            else if (passwordBox.Text.Equals(passwordConfirmBox.Text))
+            else if (!passwordBox.Text.Equals(passwordConfirmBox.Text))
             {
                 MessageBox.Show("Las contraseñas no coinciden");
                 errorTextBox = true;
