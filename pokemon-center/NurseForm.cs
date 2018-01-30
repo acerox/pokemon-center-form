@@ -13,7 +13,10 @@ namespace pokemon_center
 {
     public partial class NurseForm : Form
     {
+
+
         private Database database;
+
 
         public NurseForm(Database database)
         {
@@ -23,12 +26,12 @@ namespace pokemon_center
 
         private void trainerButton_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = database.getTrainerDataTable();
+            menuPrincipal.DataSource = database.getTrainerDataTable();
         }
 
         private void pokemonsButton_Click(object sender, EventArgs e)
         {
-            
+            menuPrincipal.DataSource = database.getPokemonDatatable();
         }
 
         private void shopButton_Click(object sender, EventArgs e)

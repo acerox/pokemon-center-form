@@ -21,7 +21,7 @@ namespace pokemon_center
         private MySqlDataReader result;
 
         //pone el resultado de la bbdd en esta variable
-        private DataTable data;
+        private DataTable datos = new DataTable();
 
         public Database(MySqlConnection connection)
         {
@@ -50,14 +50,26 @@ namespace pokemon_center
             return data.Rows.Count == 1;
         }
 
+        //selecciona los entrenadores
         public DataTable getTrainerDataTable()
         {
             lastSqlCommand = new MySqlCommand("SELECT * FROM trainer", connection);
+            connection.Open();
             result = lastSqlCommand.ExecuteReader();
+            datos.Load(result);
+            connection.Close();
+            return datos;
+        }
+        // selecciona los pokemon
+        public DataTable getPokemonDatatable()
+        {
 
-          
-
-            return data;
+            lastSqlCommand = new MySqlCommand("SELECT * FROM pokemon", connection);
+            connection.Open();
+            result = lastSqlCommand.ExecuteReader();
+            datos.Load(result);
+            connection.Close();
+            return datos;
         }
 
         private void openConnection()
