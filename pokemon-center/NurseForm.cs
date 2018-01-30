@@ -26,11 +26,13 @@ namespace pokemon_center
 
         private void trainerButton_Click(object sender, EventArgs e)
         {
+            database.limpiaDataGrid(menuPrincipal);
             menuPrincipal.DataSource = database.getTrainerDataTable();
         }
 
         private void pokemonsButton_Click(object sender, EventArgs e)
         {
+            database.limpiaDataGrid(menuPrincipal);
             menuPrincipal.DataSource = database.getPokemonDatatable();
         }
 

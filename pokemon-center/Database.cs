@@ -20,6 +20,7 @@ namespace pokemon_center
         //guarda el resultado de la consulta
         private MySqlDataReader result;
 
+
         //pone el resultado de la bbdd en esta variable
         private DataTable datos = new DataTable();
 
@@ -50,6 +51,14 @@ namespace pokemon_center
             return data.Rows.Count == 1;
         }
 
+        public void limpiaDataGrid(DataGridView menuPrincipal)
+        {
+            //menuPrincipal.Rows.Clear();
+            //menuPrincipal.Refresh();
+            //datos.Clear();
+            datos.Reset();
+        }
+
         //selecciona los entrenadores
         public DataTable getTrainerDataTable()
         {
@@ -63,7 +72,6 @@ namespace pokemon_center
         // selecciona los pokemon
         public DataTable getPokemonDatatable()
         {
-
             lastSqlCommand = new MySqlCommand("SELECT * FROM pokemon", connection);
             connection.Open();
             result = lastSqlCommand.ExecuteReader();
