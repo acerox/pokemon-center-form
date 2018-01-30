@@ -13,11 +13,8 @@ namespace pokemon_center
 {
     public partial class NurseForm : Form
     {
-
-
         private Database database;
-
-
+        
         public NurseForm(Database database)
         {
             InitializeComponent();
@@ -26,13 +23,13 @@ namespace pokemon_center
 
         private void trainerButton_Click(object sender, EventArgs e)
         {
-            database.limpiaDataGrid(menuPrincipal);
+            database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getTrainerDataTable();
         }
 
         private void pokemonsButton_Click(object sender, EventArgs e)
         {
-            database.limpiaDataGrid(menuPrincipal);
+            database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getPokemonDatatable();
         }
 

@@ -59,12 +59,13 @@ namespace pokemon_center
             return data.Rows.Count == 1;
         }
 
-        public void limpiaDataGrid(DataGridView menuPrincipal)
+        public void limpiaDataGrid()
         {
             //menuPrincipal.Rows.Clear();
             //menuPrincipal.Refresh();
             //datos.Clear();
-            datos.Reset();
+            //datos.Reset();
+            datos = new DataTable();
         }
 
         //selecciona los entrenadores
