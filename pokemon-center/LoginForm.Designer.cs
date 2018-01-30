@@ -59,6 +59,7 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(175, 14);
             this.usernameBox.TabIndex = 1;
+            this.usernameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernameBox_KeyPress);
             // 
             // usernameLabel
             // 
@@ -80,6 +81,7 @@
             this.passwordBox.Size = new System.Drawing.Size(175, 14);
             this.passwordBox.TabIndex = 3;
             this.passwordBox.UseSystemPasswordChar = true;
+            this.passwordBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordBox_KeyPress);
             // 
             // passwordLabel
             // 
@@ -199,6 +201,7 @@
             this.connectLabel.AutoSize = true;
             this.connectLabel.BackColor = System.Drawing.Color.Transparent;
             this.connectLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connectLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.connectLabel.Location = new System.Drawing.Point(172, 273);
             this.connectLabel.Name = "connectLabel";
             this.connectLabel.Size = new System.Drawing.Size(60, 17);
