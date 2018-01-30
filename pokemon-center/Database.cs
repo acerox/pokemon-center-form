@@ -28,6 +28,14 @@ namespace pokemon_center
             this.connection = connection;
         }
 
+        /**
+         * Registra un nuevo entrenador en la ventana NurseForm
+         */
+        public void createNewTrainer(string name, string surname, int dni, string phone)
+        {
+            executeQuery("INSERT INTO trainer(name, surname, dni, phone) VALUES('" + name + "', '" + surname + "', " + dni + ", '" + phone + "')");
+        }
+
         public void createNewNurse(string username, int centerId, string password)
         {
             executeQuery(

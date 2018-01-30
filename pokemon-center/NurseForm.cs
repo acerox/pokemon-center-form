@@ -35,5 +35,10 @@ namespace pokemon_center
         {
             
         }
+
+        private void addTrainerLogLabel_Click(object sender, EventArgs e)
+        {
+            new RegisterTrainerForm(database).Show();
+        }
     }
 }

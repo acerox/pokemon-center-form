@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
+            this.addTrainerLogLabel = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,15 +39,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button6
+            // addTrainerLogLabel
             // 
-            this.button6.Location = new System.Drawing.Point(739, 48);
-            this.button6.Margin = new System.Windows.Forms.Padding(10);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 28);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Añadir registro";
-            this.button6.UseVisualStyleBackColor = true;
+            this.addTrainerLogLabel.Location = new System.Drawing.Point(739, 48);
+            this.addTrainerLogLabel.Margin = new System.Windows.Forms.Padding(10);
+            this.addTrainerLogLabel.Name = "addTrainerLogLabel";
+            this.addTrainerLogLabel.Size = new System.Drawing.Size(83, 28);
+            this.addTrainerLogLabel.TabIndex = 2;
+            this.addTrainerLogLabel.Text = "Añadir registro";
+            this.addTrainerLogLabel.UseVisualStyleBackColor = true;
+            this.addTrainerLogLabel.Click += new System.EventHandler(this.addTrainerLogLabel_Click);
             // 
             // button5
             // 
@@ -121,7 +122,7 @@
             this.ClientSize = new System.Drawing.Size(844, 491);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.addTrainerLogLabel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -136,7 +137,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button addTrainerLogLabel;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;

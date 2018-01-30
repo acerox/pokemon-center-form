@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.phoneTextBox = new System.Windows.Forms.TextBox();
+            this.dniTextBox = new System.Windows.Forms.TextBox();
+            this.surnameTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // phoneTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 191);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 0;
+            this.phoneTextBox.Location = new System.Drawing.Point(35, 191);
+            this.phoneTextBox.Name = "phoneTextBox";
+            this.phoneTextBox.Size = new System.Drawing.Size(150, 20);
+            this.phoneTextBox.TabIndex = 0;
             // 
-            // textBox2
+            // dniTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(35, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 1;
+            this.dniTextBox.Location = new System.Drawing.Point(35, 152);
+            this.dniTextBox.Name = "dniTextBox";
+            this.dniTextBox.Size = new System.Drawing.Size(150, 20);
+            this.dniTextBox.TabIndex = 1;
             // 
-            // textBox3
+            // surnameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(35, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 20);
-            this.textBox3.TabIndex = 2;
+            this.surnameTextBox.Location = new System.Drawing.Point(35, 113);
+            this.surnameTextBox.Name = "surnameTextBox";
+            this.surnameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.surnameTextBox.TabIndex = 2;
             // 
-            // textBox4
+            // nameTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(35, 74);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 20);
-            this.textBox4.TabIndex = 3;
+            this.nameTextBox.Location = new System.Drawing.Point(35, 74);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.nameTextBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -103,29 +103,30 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Teléfono";
             // 
-            // button1
+            // registerButton
             // 
-            this.button1.Location = new System.Drawing.Point(109, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.registerButton.Location = new System.Drawing.Point(109, 218);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(75, 23);
+            this.registerButton.TabIndex = 8;
+            this.registerButton.Text = "Registrar";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // RegisterTrainerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 311);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.surnameTextBox);
+            this.Controls.Add(this.dniTextBox);
+            this.Controls.Add(this.phoneTextBox);
             this.Name = "RegisterTrainerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo entrenador";
@@ -136,14 +137,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox phoneTextBox;
+        private System.Windows.Forms.TextBox dniTextBox;
+        private System.Windows.Forms.TextBox surnameTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerButton;
     }
 }
