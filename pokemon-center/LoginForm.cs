@@ -107,11 +107,13 @@ namespace pokemon_center
         private void connectPictureBox_MouseHover(object sender, EventArgs e)
         {
             connectPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+            connectLabel.ForeColor = Color.White;
         }
 
         private void connectPictureBox_MouseLeave(object sender, EventArgs e)
         {
             connectPictureBox.Load(Application.StartupPath + "/images/login/button.png");
+            connectLabel.ForeColor = Color.Black;
         }
 
         private void connectLabel_MouseHover(object sender, EventArgs e)
@@ -127,11 +129,13 @@ namespace pokemon_center
         private void registerPictureBox_MouseHover(object sender, EventArgs e)
         {
             registerPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+            registerLabel.ForeColor = Color.White;
         }
 
         private void registerPictureBox_MouseLeave(object sender, EventArgs e)
         {
             registerPictureBox.Load(Application.StartupPath + "/images/login/button.png");
+            registerLabel.ForeColor = Color.Black;
         }
 
         private void connectLabel_Click(object sender, EventArgs e)
