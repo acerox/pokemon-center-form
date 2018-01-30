@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Recognition;
 
 namespace pokemon_center
 {
@@ -50,6 +51,11 @@ namespace pokemon_center
                 new RegisterPokemonForm(database).Show();
             }
             
+        }
+
+        private void botonEscucha_Click(object sender, EventArgs e)
+        {
+            database.escuchador();
         }
     }
 }

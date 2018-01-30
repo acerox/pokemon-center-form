@@ -14,8 +14,10 @@ namespace pokemon_center
     {
         // variable local de bbdd con la que nos enlazamos a la real
         private Database database;
+         
 
         public RegisterPokemonForm(Database database)
+               
         {
             InitializeComponent();
             //igualamos la bbdd local con la real (que pasamos arriba en el constructor)

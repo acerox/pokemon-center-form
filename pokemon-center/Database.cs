@@ -6,11 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Recognition;
 
 namespace pokemon_center
 {
     public class Database
     {
+        private Database database;
         //variable que maneja la conexion
         private MySqlConnection connection;
 
@@ -26,7 +28,7 @@ namespace pokemon_center
 
         // para saber que registrar cuando se pulse el boton de registro
         string registro = "entrenador";
-
+        SpeechRecognitionEngine escucha = new SpeechRecognitionEngine();
         public Database(MySqlConnection connection)
         {
             this.connection = connection;
@@ -102,6 +104,55 @@ namespace pokemon_center
             return datos;
         }
 
+        public void escuchador()
+        {
+            try
+            {
+                //permite al programa detectar lo que digamos por el micro 
+                escucha.SetInputToDefaultAudioDevice();
+                // diccionario para enlazar las palabras que decimos
+                escucha.LoadGrammar(new DictationGrammar());
+                // lo que escuche el programa lo envia al método reconocedor
+                escucha.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(reconocerdor);
+                // permite al programa reconocer mas de una palabra
+                escucha.RecognizeAsync(RecognizeMode.Multiple);
+            }
+            catch(InvalidOperationException) 
+            {
+                MessageBox.Show("Posible error con la conexion al microfono");
+            }
+        }
+
+        private void reconocerdor(object sender, SpeechRecognizedEventArgs e)
+        {
+            string resultado = "";
+            foreach (RecognizedWordUnit palabra in e.Result.Words)
+            {
+                resultado += palabra.Text + " ";
+                if (resultado.Contains("escolta"))
+                {
+
+                    new RegisterPokemonForm(database).Show();
+                    resultado = "";
+                }
+                else if (resultado.Contains("cliente"))
+                {
+                    new RegisterTrainerForm(database).Show();
+                }
+                else if (resultado.Contains("Jorge"))
+                {
+                    MessageBox.Show("Battlefiel Vietnam ya!!!!");
+                }
+                else
+                {
+                    MessageBox.Show(resultado);
+                    resultado = "";
+                }
+
+            }
+            
+        }
+            
         public string seleccionaParaRegistrar()
         {
             return registro;

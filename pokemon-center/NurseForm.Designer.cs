@@ -30,12 +30,13 @@
         {
             this.addTrainerLogLabel = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textoBuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.menuPrincipal = new System.Windows.Forms.DataGridView();
+            this.botonEscucha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.menuPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,14 +60,14 @@
             this.button5.Text = "Buscar";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textoBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 48);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 28);
-            this.textBox1.TabIndex = 0;
+            this.textoBuscar.Location = new System.Drawing.Point(22, 48);
+            this.textoBuscar.Margin = new System.Windows.Forms.Padding(10);
+            this.textoBuscar.Multiline = true;
+            this.textoBuscar.Name = "textoBuscar";
+            this.textoBuscar.Size = new System.Drawing.Size(236, 28);
+            this.textoBuscar.TabIndex = 0;
             // 
             // button1
             // 
@@ -111,22 +112,33 @@
             // 
             this.menuPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.menuPrincipal.Location = new System.Drawing.Point(18, 110);
-            this.menuPrincipal.Name = "dataGridView1";
+            this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Size = new System.Drawing.Size(756, 332);
             this.menuPrincipal.TabIndex = 5;
+            // 
+            // botonEscucha
+            // 
+            this.botonEscucha.Location = new System.Drawing.Point(532, 46);
+            this.botonEscucha.Name = "botonEscucha";
+            this.botonEscucha.Size = new System.Drawing.Size(75, 23);
+            this.botonEscucha.TabIndex = 6;
+            this.botonEscucha.Text = "Escucha";
+            this.botonEscucha.UseVisualStyleBackColor = true;
+            this.botonEscucha.Click += new System.EventHandler(this.botonEscucha_Click);
             // 
             // NurseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 491);
+            this.Controls.Add(this.botonEscucha);
             this.Controls.Add(this.menuPrincipal);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.addTrainerLogLabel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textoBuscar);
             this.Controls.Add(this.button1);
             this.Name = "NurseForm";
             this.Text = "Panel de control";
@@ -139,11 +151,12 @@
         #endregion
         private System.Windows.Forms.Button addTrainerLogLabel;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textoBuscar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView menuPrincipal;
+        private System.Windows.Forms.Button botonEscucha;
     }
 }
