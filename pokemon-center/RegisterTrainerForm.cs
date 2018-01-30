@@ -12,6 +12,7 @@ namespace pokemon_center
 {
     public partial class RegisterTrainerForm : Form
     {
+        // coge la base de datos
         private Database database;
 
         public RegisterTrainerForm(Database database)

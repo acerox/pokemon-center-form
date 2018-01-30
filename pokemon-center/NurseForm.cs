@@ -40,7 +40,16 @@ namespace pokemon_center
 
         private void addTrainerLogLabel_Click(object sender, EventArgs e)
         {
-            new RegisterTrainerForm(database).Show();
+          String registro = database.seleccionaParaRegistrar();
+            if (registro.Equals("entrenador"))
+            {
+                new RegisterTrainerForm(database).Show();
+            }
+            else if (registro.Equals("pokemon"))
+            {
+                new RegisterPokemonForm(database).Show();
+            }
+            
         }
     }
 }

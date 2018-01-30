@@ -24,6 +24,9 @@ namespace pokemon_center
         //pone el resultado de la bbdd en esta variable
         private DataTable datos = new DataTable();
 
+        // para saber que registrar cuando se pulse el boton de registro
+        string registro = "entrenador";
+
         public Database(MySqlConnection connection)
         {
             this.connection = connection;
@@ -36,11 +39,18 @@ namespace pokemon_center
         {
             executeQuery("INSERT INTO trainer(name, surname, dni, phone) VALUES('" + name + "', '" + surname + "', " + dni + ", '" + phone + "')");
         }
-
+        // registra un nuevo medico
         public void createNewNurse(string username, int centerId, string password)
         {
             executeQuery(
                 "INSERT INTO nurse(id_center, username, password) VALUES(" + centerId + ", '" + username + "', '" + password + "')"
+                );
+        }
+
+        public void createNewPokemon(string name, string gender, string type, string race, int chip  )
+        {
+            executeQuery(
+                "INSERT INTO pokemon (name, gender, type, race, chip) VALUES ('"+name+ "','"+gender+ "','"+type+"','"+race+"',"+chip+")"
                 );
         }
 
@@ -59,6 +69,7 @@ namespace pokemon_center
             return data.Rows.Count == 1;
         }
 
+        //actualiza el datagridview (para que no se superpongan las consultas)
         public void limpiaDataGrid()
         {
             //menuPrincipal.Rows.Clear();
@@ -71,6 +82,7 @@ namespace pokemon_center
         //selecciona los entrenadores
         public DataTable getTrainerDataTable()
         {
+            registro = "entrenador";
             lastSqlCommand = new MySqlCommand("SELECT * FROM trainer", connection);
             connection.Open();
             result = lastSqlCommand.ExecuteReader();
@@ -81,6 +93,7 @@ namespace pokemon_center
         // selecciona los pokemon
         public DataTable getPokemonDatatable()
         {
+            registro = "pokemon";
             lastSqlCommand = new MySqlCommand("SELECT * FROM pokemon", connection);
             connection.Open();
             result = lastSqlCommand.ExecuteReader();
@@ -89,6 +102,10 @@ namespace pokemon_center
             return datos;
         }
 
+        public string seleccionaParaRegistrar()
+        {
+            return registro;
+        }
         private void openConnection()
         {
             connection.Open();

@@ -28,53 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textoNombre = new System.Windows.Forms.TextBox();
+            this.textoGenero = new System.Windows.Forms.TextBox();
+            this.textoTipo = new System.Windows.Forms.TextBox();
+            this.textoRaza = new System.Windows.Forms.TextBox();
+            this.textoChip = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.botonRegistroPokemon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textoNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 0;
+            this.textoNombre.Location = new System.Drawing.Point(38, 61);
+            this.textoNombre.Name = "textoNombre";
+            this.textoNombre.Size = new System.Drawing.Size(150, 20);
+            this.textoNombre.TabIndex = 0;
             // 
-            // textBox2
+            // textoGenero
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 1;
+            this.textoGenero.Location = new System.Drawing.Point(38, 100);
+            this.textoGenero.Name = "textoGenero";
+            this.textoGenero.Size = new System.Drawing.Size(150, 20);
+            this.textoGenero.TabIndex = 1;
             // 
-            // textBox3
+            // textoTipo
             // 
-            this.textBox3.Location = new System.Drawing.Point(38, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 20);
-            this.textBox3.TabIndex = 2;
+            this.textoTipo.Location = new System.Drawing.Point(38, 139);
+            this.textoTipo.Name = "textoTipo";
+            this.textoTipo.Size = new System.Drawing.Size(150, 20);
+            this.textoTipo.TabIndex = 2;
             // 
-            // textBox4
+            // textoRaza
             // 
-            this.textBox4.Location = new System.Drawing.Point(38, 178);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 20);
-            this.textBox4.TabIndex = 3;
+            this.textoRaza.Location = new System.Drawing.Point(38, 178);
+            this.textoRaza.Name = "textoRaza";
+            this.textoRaza.Size = new System.Drawing.Size(150, 20);
+            this.textoRaza.TabIndex = 3;
             // 
-            // textBox5
+            // textoChip
             // 
-            this.textBox5.Location = new System.Drawing.Point(38, 217);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(150, 20);
-            this.textBox5.TabIndex = 4;
+            this.textoChip.Location = new System.Drawing.Point(38, 217);
+            this.textoChip.Name = "textoChip";
+            this.textoChip.Size = new System.Drawing.Size(150, 20);
+            this.textoChip.TabIndex = 4;
             // 
             // label1
             // 
@@ -121,31 +121,32 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Chip";
             // 
-            // button1
+            // botonRegistroPokemon
             // 
-            this.button1.Location = new System.Drawing.Point(113, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.botonRegistroPokemon.Location = new System.Drawing.Point(113, 243);
+            this.botonRegistroPokemon.Name = "botonRegistroPokemon";
+            this.botonRegistroPokemon.Size = new System.Drawing.Size(75, 23);
+            this.botonRegistroPokemon.TabIndex = 10;
+            this.botonRegistroPokemon.Text = "Registrar";
+            this.botonRegistroPokemon.UseVisualStyleBackColor = true;
+            this.botonRegistroPokemon.Click += new System.EventHandler(this.botonRegistroPokemon_Click);
             // 
             // RegisterPokemonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 311);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.botonRegistroPokemon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textoChip);
+            this.Controls.Add(this.textoRaza);
+            this.Controls.Add(this.textoTipo);
+            this.Controls.Add(this.textoGenero);
+            this.Controls.Add(this.textoNombre);
             this.Name = "RegisterPokemonForm";
             this.Text = "Nuevo pokemon";
             this.ResumeLayout(false);
@@ -155,16 +156,16 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textoNombre;
+        private System.Windows.Forms.TextBox textoGenero;
+        private System.Windows.Forms.TextBox textoTipo;
+        private System.Windows.Forms.TextBox textoRaza;
+        private System.Windows.Forms.TextBox textoChip;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button botonRegistroPokemon;
     }
 }
