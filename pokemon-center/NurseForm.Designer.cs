@@ -109,9 +109,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 110);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(756, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(752, 332);
             this.dataGridView1.TabIndex = 5;
             // 
             // NurseForm

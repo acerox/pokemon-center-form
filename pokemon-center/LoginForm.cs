@@ -157,5 +157,18 @@ namespace pokemon_center
         {
             registerPictureBox_MouseLeave(sender, e);
         }
+
+        private void passwordBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                connectPictureBox_Click(sender, e);
+            }
+        }
+
+        private void usernameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            passwordBox_KeyPress(sender, e);
+        }
     }
 }
