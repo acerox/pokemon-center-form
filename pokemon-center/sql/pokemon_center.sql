@@ -2,8 +2,8 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 22-01-2018 a las 13:17:56
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 31-01-2018 a las 22:21:44
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pokemon_center`
+-- Base de datos: `pokemon-center`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,13 @@ CREATE TABLE `center` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `center`
+--
+
+INSERT INTO `center` (`id`, `name`) VALUES
+(1, 'Misco');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +52,17 @@ CREATE TABLE `nurse` (
   `username` varchar(255) NOT NULL,
   `password` char(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `nurse`
+--
+
+INSERT INTO `nurse` (`id`, `id_center`, `username`, `password`) VALUES
+(2, 1, 'pepe', '1234'),
+(3, 1, 'pepeton', '1234'),
+(4, 1, 'SergioPuta', 'soyTonto'),
+(5, 1, 'puyiyo', '1234'),
+(7, 1, 'Jorge', '1234');
 
 -- --------------------------------------------------------
 
@@ -61,6 +79,13 @@ CREATE TABLE `pokemon` (
   `chip` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `pokemon`
+--
+
+INSERT INTO `pokemon` (`id`, `name`, `gender`, `type`, `race`, `chip`) VALUES
+(1, 'qwer', 'qer', 'qwr', 'qwer', 21342223);
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +99,14 @@ CREATE TABLE `trainer` (
   `dni` int(11) NOT NULL,
   `phone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `trainer`
+--
+
+INSERT INTO `trainer` (`id`, `name`, `surname`, `dni`, `phone`) VALUES
+(1, 'ash', 'ketchum', 3412324, '23421142'),
+(2, 'erwqr', 'qwerq', 324324, '23423');
 
 -- --------------------------------------------------------
 
@@ -149,25 +182,25 @@ ALTER TABLE `visit_trainer_center`
 -- AUTO_INCREMENT de la tabla `center`
 --
 ALTER TABLE `center`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `nurse`
 --
 ALTER TABLE `nurse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `pokemon`
 --
 ALTER TABLE `pokemon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `trainer`
 --
 ALTER TABLE `trainer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
@@ -197,7 +230,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- UPDATES
-INSERT INTO `center`(`name`) VALUES ("Ciudad Verde");
-INSERT INTO `center`(`name`) VALUES ("Pueblo Paleta");
-
