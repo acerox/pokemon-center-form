@@ -27,17 +27,22 @@ namespace pokemon_center
         {
             database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getTrainerDataTable();
+            backgroundImg.Image = Image.FromFile("C:\\Users\\Sergio\\Source\\Repos\\pokemon-center-form\\pokemon-center\\images\\imgTrainer.jpg");
+            
         }
 
         private void pokemonsButton_Click(object sender, EventArgs e)
         {
             database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getPokemonDatatable();
+            backgroundImg.Image = Image.FromFile("C:\\Users\\Sergio\\Source\\Repos\\pokemon-center-form\\pokemon-center\\images\\imgPokemon1.png");
         }
 
         private void shopButton_Click(object sender, EventArgs e)
         {
-            
+            database.limpiaDataGrid();
+            menuPrincipal.DataSource = database.getShopDatatable();
+            backgroundImg.Image = Image.FromFile("C:\\Users\\Sergio\\Source\\Repos\\pokemon-center-form\\pokemon-center\\images\\imgShop1.jpg");
         }
 
         private void addTrainerLogLabel_Click(object sender, EventArgs e)
@@ -77,6 +82,11 @@ namespace pokemon_center
         {
             this.Close();
             // ver como cerrar las demas ventanas si están abiertas
+        }
+
+        private void NurseForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

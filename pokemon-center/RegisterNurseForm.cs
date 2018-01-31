@@ -47,15 +47,16 @@ namespace pokemon_center
             try
             {
                 database.createNewNurse(usernameBox.Text, getPokemonCenterId(), passwordBox.Text);
-                
+                MessageBox.Show("Nuevo usuario registrado");
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No ha sido posible registrar al nuevo usuario" + ex.ToString());
+
             }
             
-            MessageBox.Show("Nuevo usuario registrado");
-            this.Close();
+            
         }
 
         private Boolean checkTextboxs()

@@ -171,5 +171,10 @@ namespace pokemon_center
         {
             passwordBox_KeyPress(sender, e);
         }
+
+        private void usernameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

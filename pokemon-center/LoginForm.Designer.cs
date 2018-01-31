@@ -52,14 +52,16 @@
             // 
             // usernameBox
             // 
+            this.usernameBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameBox.BackColor = System.Drawing.SystemColors.Window;
             this.usernameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(63, 170);
+            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.usernameBox.Location = new System.Drawing.Point(63, 168);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(175, 14);
+            this.usernameBox.Size = new System.Drawing.Size(175, 16);
             this.usernameBox.TabIndex = 1;
             this.usernameBox.Text = "puyiyo";
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             this.usernameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernameBox_KeyPress);
             // 
             // usernameLabel
@@ -76,10 +78,10 @@
             // passwordBox
             // 
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.passwordBox.Location = new System.Drawing.Point(63, 223);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(175, 14);
+            this.passwordBox.Size = new System.Drawing.Size(175, 16);
             this.passwordBox.TabIndex = 3;
             this.passwordBox.Text = "1234";
             this.passwordBox.UseSystemPasswordChar = true;

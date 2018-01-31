@@ -142,6 +142,25 @@ namespace pokemon_center
             return datos;
         }
 
+        // selecciona objetos tienda
+        public DataTable getShopDatatable()
+        {
+            registro = "shop";
+            lastSqlCommand = new MySqlCommand("SELECT * FROM shop", connection);
+            connection.Open();
+            result = lastSqlCommand.ExecuteReader();
+            datos.Load(result);
+            connection.Close();
+            return datos;
+        }
+
+
+
+
+
+
+
+
         //variable que retransmitira sonido(2)
         SpeechSynthesizer sintetizador = new SpeechSynthesizer();
         //lista que el ordenador retransmitira mediante sonido
