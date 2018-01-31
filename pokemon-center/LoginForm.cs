@@ -91,7 +91,7 @@ namespace pokemon_center
             if (database.existUser(usernameBox.Text, passwordBox.Text))
             {
                 this.Hide();
-                new NurseForm(database).Show();
+                new NurseForm(database, usernameBox).Show();
             }
             else
             {
@@ -141,6 +141,7 @@ namespace pokemon_center
         private void connectLabel_Click(object sender, EventArgs e)
         {
             connectPictureBox_Click(sender, e);
+            
         }
 
         private void registerLabel_Click(object sender, EventArgs e)

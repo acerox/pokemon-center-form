@@ -16,10 +16,11 @@ namespace pokemon_center
     {
         private Database database;
         
-        public NurseForm(Database database)
+        public NurseForm(Database database, TextBox usernameBox)
         {
             InitializeComponent();
             this.database = database;
+            database.lector(usernameBox.Text);
         }
 
         private void trainerButton_Click(object sender, EventArgs e)
@@ -70,6 +71,12 @@ namespace pokemon_center
             {
                 textoBuscar.Text = "";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            // ver como cerrar las demas ventanas si están abiertas
         }
     }
 }

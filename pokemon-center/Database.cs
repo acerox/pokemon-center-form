@@ -6,7 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// el programa lee tu voz
 using System.Speech.Recognition;
+// el programa retransmite la voz
+using System.Speech.Synthesis;
 
 namespace pokemon_center
 {
@@ -28,7 +31,8 @@ namespace pokemon_center
 
         // para saber que registrar cuando se pulse el boton de registro
         string registro = "entrenador";
-        SpeechRecognitionEngine escucha = new SpeechRecognitionEngine();
+
+
         public Database(MySqlConnection connection)
         {
             this.connection = connection;
@@ -138,6 +142,29 @@ namespace pokemon_center
             return datos;
         }
 
+        //variable que retransmitira sonido(2)
+        SpeechSynthesizer sintetizador = new SpeechSynthesizer();
+        //lista que el ordenador retransmitira mediante sonido
+        List<VoiceInfo> listaAReproducir = new List<VoiceInfo>();
+        public void lector(string userName)
+        {
+            foreach (InstalledVoice voz in sintetizador.GetInstalledVoices())
+            {
+                listaAReproducir.Add(voz.VoiceInfo);
+                sintetizador.SelectVoice("Microsoft Helena Desktop");
+                if (userName.Equals("Jorge"))
+                {
+                    sintetizador.Speak("Qué pasa Jorge tronco, rulate unos dieces");
+                }
+                else
+                {
+                    sintetizador.Speak("Buen dia" + userName);
+                }
+                
+            }
+        }
+        // variable que escucha lo que decimos(1)
+        SpeechRecognitionEngine escucha = new SpeechRecognitionEngine();
         public void escuchador()
         {
             try
@@ -163,6 +190,7 @@ namespace pokemon_center
             foreach (RecognizedWordUnit palabra in e.Result.Words)
             {
                 resultado += palabra.Text + " ";
+
                 if (resultado.Contains("escolta"))
                 {
 
@@ -172,10 +200,11 @@ namespace pokemon_center
                 else if (resultado.Contains("cliente"))
                 {
                     new RegisterTrainerForm(database).Show();
+          
                 }
-                else if (resultado.Contains("Jorge"))
+                else if (resultado.Contains("sesion"))
                 {
-                    MessageBox.Show("Battlefiel Vietnam ya!!!!");
+
                 }
                 else
                 {
