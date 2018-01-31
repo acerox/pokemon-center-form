@@ -57,5 +57,19 @@ namespace pokemon_center
         {
             database.escuchador();
         }
+
+        private void textoBuscar_TextChanged(object sender, EventArgs e)
+        {
+            database.limpiaDataGrid();
+            menuPrincipal.DataSource = database.buscarRegistro(textoBuscar.Text);
+        }
+
+        private void textoBuscar_Click(object sender, EventArgs e)
+        {
+            if (textoBuscar.Text.Equals("Buscar"))
+            {
+                textoBuscar.Text = "";
+            }
+        }
     }
 }

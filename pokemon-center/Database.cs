@@ -81,6 +81,40 @@ namespace pokemon_center
             datos = new DataTable();
         }
 
+        public DataTable buscarRegistro(string condicion)
+        {
+
+            if (registro.Equals("entrenador"))
+            {
+                lastSqlCommand = new MySqlCommand("SELECT * FROM trainer where " +
+                                "id LIKE '%"+condicion + //int
+                                "%' or name LIKE '%" + condicion +
+                                "%' or surname LIKE '%" + condicion +
+                                "%' or dni LIKE '%" + condicion + //int
+                                "%' or phone LIKE '%" + condicion + "%'", connection);//int
+            }  
+            else if(registro.Equals("pokemon")) 
+            {
+                lastSqlCommand = new MySqlCommand("SELECT * FROM pokemon where " +
+                                "id LIKE '%" + condicion + //int
+                                "%' or name LIKE '%" + condicion +
+                                "%' or gender LIKE '%" + condicion +
+                                "%' or type LIKE '%" + condicion +
+                                "%' or chip LIKE '%" + condicion + //int
+                                "%' or race LIKE '%" + condicion + "%'", connection);
+            }
+            else//tienda
+            {
+
+            }
+
+
+            connection.Open();
+            result = lastSqlCommand.ExecuteReader();
+            datos.Load(result);
+            connection.Close();
+            return datos;
+        }
         //selecciona los entrenadores
         public DataTable getTrainerDataTable()
         {
@@ -119,7 +153,7 @@ namespace pokemon_center
             }
             catch(InvalidOperationException) 
             {
-                MessageBox.Show("Posible error con la conexion al microfono");
+                MessageBox.Show("El microfono ya esta conectado y escuchando");
             }
         }
 

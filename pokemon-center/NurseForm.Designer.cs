@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.addTrainerLogLabel = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.textoBuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,15 +50,6 @@
             this.addTrainerLogLabel.UseVisualStyleBackColor = true;
             this.addTrainerLogLabel.Click += new System.EventHandler(this.addTrainerLogLabel_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(271, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(83, 28);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Buscar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // textoBuscar
             // 
             this.textoBuscar.Location = new System.Drawing.Point(22, 48);
@@ -68,6 +58,9 @@
             this.textoBuscar.Name = "textoBuscar";
             this.textoBuscar.Size = new System.Drawing.Size(236, 28);
             this.textoBuscar.TabIndex = 0;
+            this.textoBuscar.Text = "Buscar";
+            this.textoBuscar.Click += new System.EventHandler(this.textoBuscar_Click);
+            this.textoBuscar.TextChanged += new System.EventHandler(this.textoBuscar_TextChanged);
             // 
             // button1
             // 
@@ -133,7 +126,6 @@
             this.ClientSize = new System.Drawing.Size(844, 491);
             this.Controls.Add(this.botonEscucha);
             this.Controls.Add(this.menuPrincipal);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.addTrainerLogLabel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -150,7 +142,6 @@
 
         #endregion
         private System.Windows.Forms.Button addTrainerLogLabel;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textoBuscar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
