@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-01-2018 a las 22:21:44
+-- Tiempo de generación: 01-02-2018 a las 11:00:26
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -89,6 +89,36 @@ INSERT INTO `pokemon` (`id`, `name`, `gender`, `type`, `race`, `chip`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `shop`
+--
+
+CREATE TABLE `shop` (
+  `idproduct` int(11) NOT NULL,
+  `img` varchar(11) NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `price` int(11) NOT NULL,
+  `total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `shop`
+--
+
+INSERT INTO `shop` (`idproduct`, `img`, `name`, `price`, `total`) VALUES
+(1, '', 'Potion', 300, 83),
+(2, '', 'Super Potion', 350, 36),
+(3, '', 'Hyper Potion', 750, 29),
+(4, '', 'Max Potion', 2500, 45),
+(5, '', 'Antidote', 100, 28),
+(6, '', 'Burn Heal', 250, 35),
+(7, '', 'Awakening', 250, 39),
+(8, '', 'Parlyze Heal', 250, 29),
+(9, '', 'Revive', 1500, 69),
+(10, '', 'Max Revive', 3200, 43);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `trainer`
 --
 
@@ -155,6 +185,12 @@ ALTER TABLE `pokemon`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `shop`
+--
+ALTER TABLE `shop`
+  ADD PRIMARY KEY (`idproduct`);
+
+--
 -- Indices de la tabla `trainer`
 --
 ALTER TABLE `trainer`
@@ -195,6 +231,12 @@ ALTER TABLE `nurse`
 --
 ALTER TABLE `pokemon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `shop`
+--
+ALTER TABLE `shop`
+  MODIFY `idproduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `trainer`
