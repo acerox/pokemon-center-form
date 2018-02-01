@@ -109,6 +109,11 @@ namespace pokemon_center
             }
             else//tienda
             {
+                lastSqlCommand = new MySqlCommand("SELECT * FROM shop where " +
+                                "idproduct LIKE '%" + condicion + //int
+                                "%' or name LIKE '%" + condicion +
+                                "%' or price LIKE '%" + condicion + "%'", connection);
+
 
             }
 
