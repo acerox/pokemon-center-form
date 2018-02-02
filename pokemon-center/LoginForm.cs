@@ -12,19 +12,16 @@ using System.Windows.Forms;
 namespace pokemon_center
 {
     public partial class LoginForm : Form
-    {
-        // Movimientos de la ventana
-        private int mousePositionX;
-        private int mousePositionY;
-        public bool windowMovement = false;
-        
+    {   
         // Base de datos
         private Database database;
+        private Movement movement;
 
         public LoginForm(Database database)
         {
             InitializeComponent();
             this.database = database;
+            movement = new Movement(this);
         }
 
         private void RegisterLinkClick(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,26 +41,17 @@ namespace pokemon_center
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            this.mousePositionX = e.X;
-            this.mousePositionY = e.Y;
-            this.windowMovement = true;
+            movement.setMouseMovement(e.X, e.Y, true);
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (windowMovement)
-            {
-                this.Location =
-                    this.PointToScreen(new Point(
-                        Cursor.Position.X - this.Location.X - mousePositionX, 
-                        Cursor.Position.Y - this.Location.Y - mousePositionY
-                    ));
-            }
+            movement.changeWindowPosition();
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
-            windowMovement = false;
+            movement.setWindowState(false);
         }
 
         private void exitPictureBox_MouseHover(object sender, EventArgs e)
@@ -141,7 +129,6 @@ namespace pokemon_center
         private void connectLabel_Click(object sender, EventArgs e)
         {
             connectPictureBox_Click(sender, e);
-            
         }
 
         private void registerLabel_Click(object sender, EventArgs e)

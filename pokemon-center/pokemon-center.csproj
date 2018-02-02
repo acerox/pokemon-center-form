@@ -64,6 +64,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movement.cs" />
     <Compile Include="NurseForm.cs">
       <SubType>Form</SubType>
     </Compile>

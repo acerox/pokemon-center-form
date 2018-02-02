@@ -116,8 +116,6 @@ namespace pokemon_center
 
 
             }
-
-
             connection.Open();
             result = lastSqlCommand.ExecuteReader();
             datos.Load(result);
@@ -159,17 +157,11 @@ namespace pokemon_center
             return datos;
         }
 
-
-
-
-
-
-
-
         //variable que retransmitira sonido(2)
         SpeechSynthesizer sintetizador = new SpeechSynthesizer();
         //lista que el ordenador retransmitira mediante sonido
         List<VoiceInfo> listaAReproducir = new List<VoiceInfo>();
+
         public void lector(string userName)
         {
             foreach (InstalledVoice voz in sintetizador.GetInstalledVoices())
@@ -217,14 +209,12 @@ namespace pokemon_center
 
                 if (resultado.Contains("escolta"))
                 {
-
                     new RegisterPokemonForm(database).Show();
                     resultado = "";
                 }
                 else if (resultado.Contains("cliente"))
                 {
                     new RegisterTrainerForm(database).Show();
-          
                 }
                 else if (resultado.Contains("sesion"))
                 {
