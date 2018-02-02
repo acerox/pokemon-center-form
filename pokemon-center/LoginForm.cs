@@ -15,6 +15,7 @@ namespace pokemon_center
     {   
         // Base de datos
         private Database database;
+
         private Movement movement;
 
         public LoginForm(Database database)

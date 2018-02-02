@@ -79,7 +79,7 @@ namespace pokemon_center
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logoutButton_Click(object sender, EventArgs e)
         {
             this.Close();
             // ver como cerrar las demas ventanas si están abiertas

@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NurseForm));
             this.addTrainerLogLabel = new System.Windows.Forms.Button();
             this.textoBuscar = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.trainersButton = new System.Windows.Forms.Button();
+            this.pokemonsButton = new System.Windows.Forms.Button();
+            this.shopButton = new System.Windows.Forms.Button();
             this.menuPrincipal = new System.Windows.Forms.DataGridView();
             this.botonEscucha = new System.Windows.Forms.Button();
             this.backgroundImg = new System.Windows.Forms.PictureBox();
@@ -66,45 +66,45 @@
             this.textoBuscar.Click += new System.EventHandler(this.textoBuscar_Click);
             this.textoBuscar.TextChanged += new System.EventHandler(this.textoBuscar_TextChanged);
             // 
-            // button1
+            // logoutButton
             // 
-            this.button1.Location = new System.Drawing.Point(558, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cerrar sesión";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.logoutButton.Location = new System.Drawing.Point(558, 9);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(82, 23);
+            this.logoutButton.TabIndex = 1;
+            this.logoutButton.Text = "Cerrar sesión";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // button2
+            // trainersButton
             // 
-            this.button2.Location = new System.Drawing.Point(22, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Entrenadores";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.trainerButton_Click);
+            this.trainersButton.Location = new System.Drawing.Point(22, 12);
+            this.trainersButton.Name = "trainersButton";
+            this.trainersButton.Size = new System.Drawing.Size(78, 23);
+            this.trainersButton.TabIndex = 2;
+            this.trainersButton.Text = "Entrenadores";
+            this.trainersButton.UseVisualStyleBackColor = true;
+            this.trainersButton.Click += new System.EventHandler(this.trainerButton_Click);
             // 
-            // button3
+            // pokemonsButton
             // 
-            this.button3.Location = new System.Drawing.Point(106, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Pokemons";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.pokemonsButton_Click);
+            this.pokemonsButton.Location = new System.Drawing.Point(106, 12);
+            this.pokemonsButton.Name = "pokemonsButton";
+            this.pokemonsButton.Size = new System.Drawing.Size(78, 23);
+            this.pokemonsButton.TabIndex = 3;
+            this.pokemonsButton.Text = "Pokemons";
+            this.pokemonsButton.UseVisualStyleBackColor = true;
+            this.pokemonsButton.Click += new System.EventHandler(this.pokemonsButton_Click);
             // 
-            // button4
+            // shopButton
             // 
-            this.button4.Location = new System.Drawing.Point(190, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Tienda";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.shopButton_Click);
+            this.shopButton.Location = new System.Drawing.Point(190, 12);
+            this.shopButton.Name = "shopButton";
+            this.shopButton.Size = new System.Drawing.Size(78, 23);
+            this.shopButton.TabIndex = 4;
+            this.shopButton.Text = "Tienda";
+            this.shopButton.UseVisualStyleBackColor = true;
+            this.shopButton.Click += new System.EventHandler(this.shopButton_Click);
             // 
             // menuPrincipal
             // 
@@ -144,11 +144,11 @@
             this.Controls.Add(this.menuPrincipal);
             this.Controls.Add(this.botonEscucha);
             this.Controls.Add(this.addTrainerLogLabel);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.shopButton);
+            this.Controls.Add(this.pokemonsButton);
+            this.Controls.Add(this.trainersButton);
             this.Controls.Add(this.textoBuscar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.backgroundImg);
             this.Name = "NurseForm";
             this.Text = "Panel de control";
@@ -163,10 +163,10 @@
         #endregion
         private System.Windows.Forms.Button addTrainerLogLabel;
         private System.Windows.Forms.TextBox textoBuscar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Button trainersButton;
+        private System.Windows.Forms.Button pokemonsButton;
+        private System.Windows.Forms.Button shopButton;
         private System.Windows.Forms.DataGridView menuPrincipal;
         private System.Windows.Forms.Button botonEscucha;
         public System.Windows.Forms.PictureBox backgroundImg;
