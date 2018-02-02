@@ -27,7 +27,7 @@ namespace pokemon_center
         {
             database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getTrainerDataTable();
-            backgroundImg.Image = Image.FromFile("C:\\Users\\Sergio\\Source\\Repos\\pokemon-center-form\\pokemon-center\\images\\imgTrainer.jpg");
+            backgroundImg.Image = Image.FromFile(Application.StartupPath + "/images/imgTrainer.jpg");
             
         }
 
@@ -35,19 +35,20 @@ namespace pokemon_center
         {
             database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getPokemonDatatable();
-            backgroundImg.Image = Image.FromFile("C:\\Users\\Sergio\\Source\\Repos\\pokemon-center-form\\pokemon-center\\images\\imgPokemon1.png");
+            backgroundImg.Image = Image.FromFile(Application.StartupPath + "/images/imgPokemon1.png");
         }
 
         private void shopButton_Click(object sender, EventArgs e)
         {
             database.limpiaDataGrid();
             menuPrincipal.DataSource = database.getShopDatatable();
-            backgroundImg.Image = Image.FromFile("C:\\Users\\Sergio\\Source\\Repos\\pokemon-center-form\\pokemon-center\\images\\imgShop1.jpg");
+            backgroundImg.Image = Image.FromFile(Application.StartupPath + "/images/imgShop1.jpg");
         }
 
         private void addTrainerLogLabel_Click(object sender, EventArgs e)
         {
-          String registro = database.seleccionaParaRegistrar();
+            String registro = database.seleccionaParaRegistrar();
+
             if (registro.Equals("entrenador"))
             {
                 new RegisterTrainerForm(database).Show();
