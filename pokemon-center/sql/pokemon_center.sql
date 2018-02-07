@@ -38,7 +38,9 @@ CREATE TABLE `center` (
 --
 
 INSERT INTO `center` (`id`, `name`) VALUES
-(1, 'Misco');
+(1, 'Ciudad Verde');
+INSERT INTO `center` (`id`, `name`) VALUES
+(2, 'Pueblo Paleta');
 
 -- --------------------------------------------------------
 
