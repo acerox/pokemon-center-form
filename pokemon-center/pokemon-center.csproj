@@ -188,6 +188,9 @@
     <Content Include="images\minimize.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\registerNewNurse\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\shop\apricorn\black.png" />
     <Content Include="images\shop\apricorn\blue.png" />
     <Content Include="images\shop\apricorn\green.png" />
