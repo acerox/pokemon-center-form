@@ -15,54 +15,15 @@ namespace pokemon_center
     public partial class NurseForm : Form
     {
         private Database database;
+        private Movement movement;
         
         public NurseForm(Database database, TextBox usernameBox)
         {
             InitializeComponent();
             this.database = database;
             database.lector(usernameBox.Text);
-        }
-
-        private void trainerButton_Click(object sender, EventArgs e)
-        {
-            database.limpiaDataGrid();
+            movement = new Movement(this);
             menuPrincipal.DataSource = database.getTrainerDataTable();
-            backgroundImg.Image = Image.FromFile(Application.StartupPath + "/images/imgTrainer.jpg");
-            
-        }
-
-        private void pokemonsButton_Click(object sender, EventArgs e)
-        {
-            database.limpiaDataGrid();
-            menuPrincipal.DataSource = database.getPokemonDatatable();
-            backgroundImg.Image = Image.FromFile(Application.StartupPath + "/images/imgPokemon1.png");
-        }
-
-        private void shopButton_Click(object sender, EventArgs e)
-        {
-            database.limpiaDataGrid();
-            menuPrincipal.DataSource = database.getShopDatatable();
-            backgroundImg.Image = Image.FromFile(Application.StartupPath + "/images/imgShop1.jpg");
-        }
-
-        private void addTrainerLogLabel_Click(object sender, EventArgs e)
-        {
-            String registro = database.seleccionaParaRegistrar();
-
-            if (registro.Equals("entrenador"))
-            {
-                new RegisterTrainerForm(database).Show();
-            }
-            else if (registro.Equals("pokemon"))
-            {
-                new RegisterPokemonForm(database).Show();
-            }
-            
-        }
-
-        private void botonEscucha_Click(object sender, EventArgs e)
-        {
-            database.escuchador();
         }
 
         private void textoBuscar_TextChanged(object sender, EventArgs e)
@@ -79,15 +40,101 @@ namespace pokemon_center
             }
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            String registro = database.seleccionaParaRegistrar();
+
+            if (registro.Equals("entrenador"))
+            {
+                new RegisterTrainerForm(database).Show();
+            }
+            else if (registro.Equals("pokemon"))
+            {
+                new RegisterPokemonForm(database).Show();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            database.escuchador();
+            MessageBox.Show("Escuchando...");
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            database.limpiaDataGrid();
+            menuPrincipal.DataSource = database.getTrainerDataTable();
+            this.BackgroundImage = Image.FromFile(Application.StartupPath + "/images/dashboard/background-trainers.png");
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            database.limpiaDataGrid();
+            menuPrincipal.DataSource = database.getPokemonDatatable();
+            this.BackgroundImage = Image.FromFile(Application.StartupPath + "/images/dashboard/background-pokemons.png");
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            database.limpiaDataGrid();
+            menuPrincipal.DataSource = database.getShopDatatable();
+            this.BackgroundImage = Image.FromFile(Application.StartupPath + "/images/dashboard/background-shop.png");
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
             this.Close();
             // ver como cerrar las demas ventanas si están abiertas
         }
 
-        private void NurseForm_Load(object sender, EventArgs e)
+        private void addLabel_Click(object sender, EventArgs e)
         {
+            pictureBox1_Click(sender, e);
+        }
 
+        private void trainersLabel_Click(object sender, EventArgs e)
+        {
+            pictureBox3_Click(sender, e);
+        }
+
+        private void pokemonsLabel_Click(object sender, EventArgs e)
+        {
+            pictureBox4_Click(sender, e);
+        }
+
+        private void shopLabel_Click(object sender, EventArgs e)
+        {
+            pictureBox5_Click(sender, e);
+        }
+
+        private void logoutLabel_Click(object sender, EventArgs e)
+        {
+            pictureBox6_Click(sender, e);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            movement.setMouseMovement(e.X, e.Y, true);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            movement.changeWindowPosition();
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            movement.setWindowState(false);
+        }
+
+        private void exitPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizePictureBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
