@@ -15,7 +15,6 @@ namespace pokemon_center
 {
     public class Database
     {
-        private Database database;
         //variable que maneja la conexion
         private MySqlConnection connection;
 
@@ -209,12 +208,12 @@ namespace pokemon_center
 
                 if (resultado.Contains("escolta"))
                 {
-                    new RegisterPokemonForm(database).Show();
+                    new RegisterPokemonForm(this).Show();
                     resultado = "";
                 }
                 else if (resultado.Contains("cliente"))
                 {
-                    new RegisterTrainerForm(database).Show();
+                    new RegisterTrainerForm(this).Show();
                 }
                 else if (resultado.Contains("sesion"))
                 {
