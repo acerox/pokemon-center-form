@@ -164,5 +164,10 @@ namespace pokemon_center
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Veterinario pokemon creado por:\n\n - Marc Fernandez\n - Sergio Freire\n - Agustín Cisneros\n\nContacto: dudas@dam.com");
+        }
     }
 }

@@ -148,6 +148,7 @@
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Sobre nosotros";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
