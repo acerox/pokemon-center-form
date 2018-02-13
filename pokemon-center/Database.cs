@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Speech.Recognition;
 // el programa retransmite la voz
 using System.Speech.Synthesis;
+// bucle de consultas
+using System.Data.SqlClient;
+
 
 namespace pokemon_center
 {
@@ -151,9 +154,20 @@ namespace pokemon_center
             lastSqlCommand = new MySqlCommand("SELECT * FROM shop", connection);
             connection.Open();
             result = lastSqlCommand.ExecuteReader();
+            List<string> listaResultado = new List<string>();
+            while (result.Read())
+            {
+                listaResultado.Add(Convert.ToString(result["img"]));
+                PictureBox imagen = new PictureBox();
+                
+            }
+
+
             datos.Load(result);
             connection.Close();
             return datos;
+
+  
         }
 
         //variable que retransmitira sonido(2)
