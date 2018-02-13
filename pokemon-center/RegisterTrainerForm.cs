@@ -14,26 +14,13 @@ namespace pokemon_center
     {
         // coge la base de datos
         private Database database;
+        private Movement movement;
 
         public RegisterTrainerForm(Database database)
         {
             InitializeComponent();
             this.database = database;
-        }
-
-        private void registerButton_Click(object sender, EventArgs e)
-        {
-            if (checkTextBoxes())
-            {
-                database.createNewTrainer(
-                    nameTextBox.Text,
-                    surnameTextBox.Text,
-                    Convert.ToInt32(dniTextBox.Text), 
-                    phoneTextBox.Text
-                    );
-                MessageBox.Show("Nuevo entrenador registrado correctamente");
-                this.Close();
-            }
+            movement = new Movement(this);
         }
         
         private Boolean checkTextBoxes()
@@ -60,6 +47,64 @@ namespace pokemon_center
             }
 
             return true;
+        }
+
+        private void registerPictureBox_Click(object sender, EventArgs e)
+        {
+            if (checkTextBoxes())
+            {
+                database.createNewTrainer(
+                    nameTextBox.Text,
+                    surnameTextBox.Text,
+                    Convert.ToInt32(dniTextBox.Text),
+                    phoneTextBox.Text
+                    );
+                MessageBox.Show("Nuevo entrenador registrado correctamente");
+                this.Close();
+            }
+        }
+
+        private void cleanPictureBox_Click(object sender, EventArgs e)
+        {
+            nameTextBox.Text = "";
+            surnameTextBox.Text = "";
+            dniTextBox.Text = "";
+            phoneTextBox.Text = "";
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            registerPictureBox_Click(sender, e);
+        }
+
+        private void cleanLabel_Click(object sender, EventArgs e)
+        {
+            cleanPictureBox_Click(sender, e);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            movement.setMouseMovement(e.X, e.Y, true);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            movement.changeWindowPosition();
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            movement.setWindowState(false);
+        }
+
+        private void exitPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizePictureBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 311);
+            this.ClientSize = new System.Drawing.Size(300, 450);
             this.Controls.Add(this.botonRegistroPokemon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -147,6 +147,7 @@
             this.Controls.Add(this.textoTipo);
             this.Controls.Add(this.textoGenero);
             this.Controls.Add(this.textoNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterPokemonForm";
             this.Text = "Nuevo pokemon";
             this.ResumeLayout(false);
