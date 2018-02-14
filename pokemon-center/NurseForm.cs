@@ -57,7 +57,6 @@ namespace pokemon_center
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             database.escuchador();
-            MessageBox.Show("Escuchando...");
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

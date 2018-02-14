@@ -177,10 +177,11 @@ namespace pokemon_center
 
         public void lector(string userName)
         {
-            foreach (InstalledVoice voz in sintetizador.GetInstalledVoices())
-            {
-                listaAReproducir.Add(voz.VoiceInfo);
+            //foreach (InstalledVoice voz in sintetizador.GetInstalledVoices())
+            //{
+                //listaAReproducir.Add(voz.VoiceInfo);
                 sintetizador.SelectVoice("Microsoft Helena Desktop");
+
                 if (userName.Equals("Jorge"))
                 {
                     sintetizador.Speak("Qué pasa Jorge tronco, rulate unos dieces");
@@ -190,7 +191,7 @@ namespace pokemon_center
                     sintetizador.Speak("Buen dia" + userName);
                 }
                 
-            }
+            //}
         }
         // variable que escucha lo que decimos(1)
         SpeechRecognitionEngine escucha = new SpeechRecognitionEngine();
