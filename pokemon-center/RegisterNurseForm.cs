@@ -141,5 +141,69 @@ namespace pokemon_center
         {
             pictureBox1_Click(sender, e);
         }
+
+        private void exitPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit-hover.png");
+        }
+
+        private void exitPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit.png");
+        }
+
+        private void minimizePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize-hover.png");
+        }
+
+        private void minimizePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize.png");
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2.Load(Application.StartupPath + "/images/login/button-hover.png");
+            pictureBox2.ForeColor = Color.White;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Load(Application.StartupPath + "/images/login/button.png");
+            pictureBox2.ForeColor = Color.Black;
+        }
+
+        private void registerLabel_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2_MouseEnter(sender, e);
+        }
+
+        private void registerLabel_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2_MouseLeave(sender, e);
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Load(Application.StartupPath + "/images/login/button-hover.png");
+            pictureBox1.ForeColor = Color.White;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Load(Application.StartupPath + "/images/login/button.png");
+            pictureBox1.ForeColor = Color.Black;
+        }
+
+        private void cleanLabel_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1_MouseEnter(sender, e);
+        }
+
+        private void cleanLabel_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2_MouseLeave(sender, e);
+        }
     }
 }

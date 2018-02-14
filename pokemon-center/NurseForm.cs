@@ -136,5 +136,47 @@ namespace pokemon_center
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void exitPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit-hover.png");
+        }
+
+        private void exitPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit.png");
+        }
+
+        private void minimizePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize-hover.png");
+        }
+
+        private void minimizePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize.png");
+        }
+
+        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox6.Load(Application.StartupPath + "/images/login/button-hover.png");
+            logoutLabel.ForeColor = Color.White;
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6.Load(Application.StartupPath + "/images/login/button.png");
+            logoutLabel.ForeColor = Color.Black;
+        }
+
+        private void logoutLabel_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox6_MouseEnter(sender, e);
+        }
+
+        private void logoutLabel_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6_MouseLeave(sender, e);
+        }
     }
 }

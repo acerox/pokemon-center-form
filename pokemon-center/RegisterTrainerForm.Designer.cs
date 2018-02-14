@@ -136,6 +136,9 @@
             this.registerPictureBox.TabIndex = 16;
             this.registerPictureBox.TabStop = false;
             this.registerPictureBox.Click += new System.EventHandler(this.registerPictureBox_Click);
+            this.registerPictureBox.MouseEnter += new System.EventHandler(this.registerPictureBox_MouseEnter);
+            this.registerPictureBox.MouseLeave += new System.EventHandler(this.registerPictureBox_MouseLeave);
+            this.registerPictureBox.MouseHover += new System.EventHandler(this.registerPictureBox_MouseHover);
             // 
             // cleanPictureBox
             // 
@@ -146,6 +149,9 @@
             this.cleanPictureBox.TabIndex = 17;
             this.cleanPictureBox.TabStop = false;
             this.cleanPictureBox.Click += new System.EventHandler(this.cleanPictureBox_Click);
+            this.cleanPictureBox.MouseEnter += new System.EventHandler(this.cleanPictureBox_MouseEnter);
+            this.cleanPictureBox.MouseLeave += new System.EventHandler(this.cleanPictureBox_MouseLeave);
+            this.cleanPictureBox.MouseHover += new System.EventHandler(this.cleanPictureBox_MouseHover);
             // 
             // registerLabel
             // 
@@ -157,6 +163,9 @@
             this.registerLabel.TabIndex = 18;
             this.registerLabel.Text = "Registrar";
             this.registerLabel.Click += new System.EventHandler(this.registerLabel_Click);
+            this.registerLabel.MouseEnter += new System.EventHandler(this.registerLabel_MouseEnter);
+            this.registerLabel.MouseLeave += new System.EventHandler(this.registerLabel_MouseLeave);
+            this.registerLabel.MouseHover += new System.EventHandler(this.registerLabel_MouseHover);
             // 
             // cleanLabel
             // 
@@ -168,6 +177,9 @@
             this.cleanLabel.TabIndex = 19;
             this.cleanLabel.Text = "Limpiar";
             this.cleanLabel.Click += new System.EventHandler(this.cleanLabel_Click);
+            this.cleanLabel.MouseEnter += new System.EventHandler(this.cleanLabel_MouseEnter);
+            this.cleanLabel.MouseLeave += new System.EventHandler(this.cleanLabel_MouseLeave);
+            this.cleanLabel.MouseHover += new System.EventHandler(this.cleanLabel_MouseHover);
             // 
             // minimizePictureBox
             // 
@@ -179,6 +191,9 @@
             this.minimizePictureBox.TabIndex = 7;
             this.minimizePictureBox.TabStop = false;
             this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
+            this.minimizePictureBox.MouseEnter += new System.EventHandler(this.minimizePictureBox_MouseEnter);
+            this.minimizePictureBox.MouseLeave += new System.EventHandler(this.minimizePictureBox_MouseLeave);
+            this.minimizePictureBox.MouseHover += new System.EventHandler(this.minimizePictureBox_MouseHover);
             // 
             // exitPictureBox
             // 
@@ -190,6 +205,9 @@
             this.exitPictureBox.TabIndex = 6;
             this.exitPictureBox.TabStop = false;
             this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            this.exitPictureBox.MouseEnter += new System.EventHandler(this.exitPictureBox_MouseEnter);
+            this.exitPictureBox.MouseLeave += new System.EventHandler(this.exitPictureBox_MouseLeave);
+            this.exitPictureBox.MouseHover += new System.EventHandler(this.exitPictureBox_MouseHover);
             // 
             // panel1
             // 

@@ -61,7 +61,6 @@
             this.usernameBox.Size = new System.Drawing.Size(175, 16);
             this.usernameBox.TabIndex = 1;
             this.usernameBox.Text = "puyiyo";
-            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             this.usernameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernameBox_KeyPress);
             // 
             // usernameLabel
@@ -108,6 +107,7 @@
             this.exitPictureBox.TabIndex = 6;
             this.exitPictureBox.TabStop = false;
             this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            this.exitPictureBox.MouseEnter += new System.EventHandler(this.exitPictureBox_MouseEnter);
             this.exitPictureBox.MouseLeave += new System.EventHandler(this.exitPictureBox_MouseLeave);
             this.exitPictureBox.MouseHover += new System.EventHandler(this.exitPictureBox_MouseHover);
             // 
@@ -121,6 +121,7 @@
             this.minimizePictureBox.TabIndex = 7;
             this.minimizePictureBox.TabStop = false;
             this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
+            this.minimizePictureBox.MouseEnter += new System.EventHandler(this.minimizePictureBox_MouseEnter);
             this.minimizePictureBox.MouseLeave += new System.EventHandler(this.minimizePictureBox_MouseLeave);
             this.minimizePictureBox.MouseHover += new System.EventHandler(this.minimizePictureBox_MouseHover);
             // 
@@ -149,6 +150,8 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Sobre nosotros";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -171,8 +174,8 @@
             this.connectPictureBox.TabIndex = 11;
             this.connectPictureBox.TabStop = false;
             this.connectPictureBox.Click += new System.EventHandler(this.connectPictureBox_Click);
+            this.connectPictureBox.MouseEnter += new System.EventHandler(this.connectPictureBox_MouseEnter);
             this.connectPictureBox.MouseLeave += new System.EventHandler(this.connectPictureBox_MouseLeave);
-            this.connectPictureBox.MouseHover += new System.EventHandler(this.connectPictureBox_MouseHover);
             // 
             // registerPictureBox
             // 
@@ -184,8 +187,8 @@
             this.registerPictureBox.TabIndex = 12;
             this.registerPictureBox.TabStop = false;
             this.registerPictureBox.Click += new System.EventHandler(this.registerPictureBox_Click);
+            this.registerPictureBox.MouseEnter += new System.EventHandler(this.registerPictureBox_MouseEnter);
             this.registerPictureBox.MouseLeave += new System.EventHandler(this.registerPictureBox_MouseLeave);
-            this.registerPictureBox.MouseHover += new System.EventHandler(this.registerPictureBox_MouseHover);
             // 
             // registerLabel
             // 
@@ -198,8 +201,8 @@
             this.registerLabel.TabIndex = 13;
             this.registerLabel.Text = "Registro";
             this.registerLabel.Click += new System.EventHandler(this.registerLabel_Click);
+            this.registerLabel.MouseEnter += new System.EventHandler(this.registerLabel_MouseEnter);
             this.registerLabel.MouseLeave += new System.EventHandler(this.registerLabel_MouseLeave);
-            this.registerLabel.MouseHover += new System.EventHandler(this.registerLabel_MouseHover);
             // 
             // connectLabel
             // 
@@ -214,8 +217,8 @@
             this.connectLabel.Text = "Conectar";
             this.connectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.connectLabel.Click += new System.EventHandler(this.connectLabel_Click);
+            this.connectLabel.MouseEnter += new System.EventHandler(this.connectLabel_MouseEnter);
             this.connectLabel.MouseLeave += new System.EventHandler(this.connectLabel_MouseLeave);
-            this.connectLabel.MouseHover += new System.EventHandler(this.connectLabel_MouseHover);
             // 
             // LoginForm
             // 

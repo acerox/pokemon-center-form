@@ -102,6 +102,8 @@
             this.minimizePictureBox.TabIndex = 7;
             this.minimizePictureBox.TabStop = false;
             this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
+            this.minimizePictureBox.MouseEnter += new System.EventHandler(this.minimizePictureBox_MouseEnter);
+            this.minimizePictureBox.MouseLeave += new System.EventHandler(this.minimizePictureBox_MouseLeave);
             // 
             // exitPictureBox
             // 
@@ -113,6 +115,8 @@
             this.exitPictureBox.TabIndex = 6;
             this.exitPictureBox.TabStop = false;
             this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            this.exitPictureBox.MouseEnter += new System.EventHandler(this.exitPictureBox_MouseEnter);
+            this.exitPictureBox.MouseLeave += new System.EventHandler(this.exitPictureBox_MouseLeave);
             // 
             // panel1
             // 
@@ -180,6 +184,8 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -190,6 +196,8 @@
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
             // registerLabel
             // 
@@ -201,6 +209,8 @@
             this.registerLabel.TabIndex = 17;
             this.registerLabel.Text = "Registrar";
             this.registerLabel.Click += new System.EventHandler(this.registerLabel_Click);
+            this.registerLabel.MouseEnter += new System.EventHandler(this.registerLabel_MouseEnter);
+            this.registerLabel.MouseLeave += new System.EventHandler(this.registerLabel_MouseLeave);
             // 
             // cleanLabel
             // 
@@ -212,6 +222,8 @@
             this.cleanLabel.TabIndex = 18;
             this.cleanLabel.Text = "Limpiar";
             this.cleanLabel.Click += new System.EventHandler(this.cleanLabel_Click);
+            this.cleanLabel.MouseEnter += new System.EventHandler(this.cleanLabel_MouseEnter);
+            this.cleanLabel.MouseLeave += new System.EventHandler(this.cleanLabel_MouseLeave);
             // 
             // RegisterNurseForm
             // 

@@ -93,32 +93,16 @@ namespace pokemon_center
             new RegisterNurseForm(database).Show();
         }
 
-        private void connectPictureBox_MouseHover(object sender, EventArgs e)
-        {
-            connectPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
-            connectLabel.ForeColor = Color.White;
-        }
-
         private void connectPictureBox_MouseLeave(object sender, EventArgs e)
         {
             connectPictureBox.Load(Application.StartupPath + "/images/login/button.png");
             connectLabel.ForeColor = Color.Black;
-        }
-
-        private void connectLabel_MouseHover(object sender, EventArgs e)
-        {
-            connectPictureBox_MouseHover(sender, e);
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void connectLabel_MouseLeave(object sender, EventArgs e)
         {
             connectPictureBox_MouseLeave(sender, e);
-        }
-
-        private void registerPictureBox_MouseHover(object sender, EventArgs e)
-        {
-            registerPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
-            registerLabel.ForeColor = Color.White;
         }
 
         private void registerPictureBox_MouseLeave(object sender, EventArgs e)
@@ -135,11 +119,6 @@ namespace pokemon_center
         private void registerLabel_Click(object sender, EventArgs e)
         {
             registerPictureBox_Click(sender, e);
-        }
-
-        private void registerLabel_MouseHover(object sender, EventArgs e)
-        {
-            registerPictureBox_MouseHover(sender, e);
         }
 
         private void registerLabel_MouseLeave(object sender, EventArgs e)
@@ -160,14 +139,51 @@ namespace pokemon_center
             passwordBox_KeyPress(sender, e);
         }
 
-        private void usernameBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Veterinario pokemon creado por:\n\n - Marc Fernandez\n - Sergio Freire\n - Agustín Cisneros\n\nContacto: dudas@dam.com");
+        }
+
+        private void connectLabel_MouseEnter(object sender, EventArgs e)
+        {
+            connectPictureBox_MouseEnter(sender, e);
+        }
+
+        private void connectPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            connectPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+            connectLabel.ForeColor = Color.White;
+        }
+
+        private void exitPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            exitPictureBox_MouseHover(sender, e);
+        }
+
+        private void minimizePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            minimizePictureBox_MouseHover(sender, e);
+        }
+
+        private void registerPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            registerPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+            registerLabel.ForeColor = Color.White;
+        }
+
+        private void registerLabel_MouseEnter(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseEnter(sender, e);
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.Black;
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.White;
         }
     }
 }

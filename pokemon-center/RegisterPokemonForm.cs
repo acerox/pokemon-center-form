@@ -112,5 +112,69 @@ namespace pokemon_center
         {
             movement.setWindowState(false);
         }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Load(Application.StartupPath + "/images/login/button-hover.png");
+            label5.ForeColor = Color.White;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Load(Application.StartupPath + "/images/login/button.png");
+            label5.ForeColor = Color.Black;
+        }
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1_MouseEnter(sender, e);
+        }
+
+        private void label5_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1_MouseLeave(sender, e);
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2.Load(Application.StartupPath + "/images/login/button-hover.png");
+            label6.ForeColor = Color.White;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Load(Application.StartupPath + "/images/login/button.png");
+            label6.ForeColor = Color.Black;
+        }
+
+        private void label6_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2_MouseEnter(sender, e);
+        }
+
+        private void label6_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2_MouseLeave(sender, e);
+        }
+
+        private void exitPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit-hover.png");
+        }
+
+        private void exitPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit.png");
+        }
+
+        private void minimizePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize-hover.png");
+        }
+
+        private void minimizePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize.png");
+        }
     }
 }

@@ -106,5 +106,99 @@ namespace pokemon_center
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void exitPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit-hover.png");
+        }
+
+        private void exitPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            exitPictureBox.Load(Application.StartupPath + "/images/exit.png");
+        }
+
+        private void minimizePictureBox_MouseHover(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize-hover.png");
+        }
+
+        private void minimizePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            minimizePictureBox.Load(Application.StartupPath + "/images/minimize.png");
+        }
+
+        private void registerPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            registerPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+            registerLabel.ForeColor = Color.White;
+        }
+
+        private void registerPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            registerPictureBox.Load(Application.StartupPath + "/images/login/button.png");
+            registerLabel.ForeColor = Color.Black;
+        }
+
+        private void registerLabel_MouseHover(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseHover(sender, e);
+        }
+
+        private void registerLabel_MouseLeave(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseLeave(sender, e);
+        }
+
+        private void cleanPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            cleanPictureBox.Load(Application.StartupPath + "/images/login/button-hover.png");
+            cleanLabel.ForeColor = Color.White;
+        }
+
+        private void cleanPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            cleanPictureBox.Load(Application.StartupPath + "/images/login/button.png");
+            cleanLabel.ForeColor = Color.Black;
+        }
+
+        private void cleanLabel_MouseHover(object sender, EventArgs e)
+        {
+            cleanPictureBox_MouseHover(sender, e);
+        }
+
+        private void cleanLabel_MouseLeave(object sender, EventArgs e)
+        {
+            cleanPictureBox_MouseLeave(sender, e);
+        }
+
+        private void registerPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseHover(sender, e);
+        }
+
+        private void registerLabel_MouseEnter(object sender, EventArgs e)
+        {
+            registerPictureBox_MouseHover(sender, e);
+        }
+
+        private void cleanPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            cleanPictureBox_MouseHover(sender, e);
+        }
+
+        private void cleanLabel_MouseEnter(object sender, EventArgs e)
+        {
+            cleanPictureBox_MouseHover(sender, e);
+        }
+
+        private void minimizePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            minimizePictureBox_MouseHover(sender, e);
+        }
+
+        private void exitPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            exitPictureBox_MouseHover(sender, e);
+        }
     }
 }

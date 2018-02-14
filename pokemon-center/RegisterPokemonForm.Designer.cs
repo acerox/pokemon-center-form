@@ -157,6 +157,8 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -167,6 +169,8 @@
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
             // label5
             // 
@@ -178,6 +182,8 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Registrar";
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
             // 
             // label6
             // 
@@ -189,6 +195,8 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Limpiar";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
+            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
             // 
             // minimizePictureBox
             // 
@@ -200,6 +208,8 @@
             this.minimizePictureBox.TabIndex = 7;
             this.minimizePictureBox.TabStop = false;
             this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
+            this.minimizePictureBox.MouseEnter += new System.EventHandler(this.minimizePictureBox_MouseEnter);
+            this.minimizePictureBox.MouseLeave += new System.EventHandler(this.minimizePictureBox_MouseLeave);
             // 
             // exitPictureBox
             // 
@@ -211,6 +221,8 @@
             this.exitPictureBox.TabIndex = 6;
             this.exitPictureBox.TabStop = false;
             this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            this.exitPictureBox.MouseEnter += new System.EventHandler(this.exitPictureBox_MouseEnter);
+            this.exitPictureBox.MouseLeave += new System.EventHandler(this.exitPictureBox_MouseLeave);
             // 
             // panel1
             // 

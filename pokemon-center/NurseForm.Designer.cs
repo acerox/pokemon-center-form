@@ -118,6 +118,8 @@
             this.minimizePictureBox.TabIndex = 7;
             this.minimizePictureBox.TabStop = false;
             this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
+            this.minimizePictureBox.MouseEnter += new System.EventHandler(this.minimizePictureBox_MouseEnter);
+            this.minimizePictureBox.MouseLeave += new System.EventHandler(this.minimizePictureBox_MouseLeave);
             // 
             // exitPictureBox
             // 
@@ -129,6 +131,8 @@
             this.exitPictureBox.TabIndex = 6;
             this.exitPictureBox.TabStop = false;
             this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            this.exitPictureBox.MouseEnter += new System.EventHandler(this.exitPictureBox_MouseEnter);
+            this.exitPictureBox.MouseLeave += new System.EventHandler(this.exitPictureBox_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -189,6 +193,8 @@
             this.pictureBox6.TabIndex = 17;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
             // 
             // addLabel
             // 
@@ -238,12 +244,15 @@
             // 
             this.logoutLabel.AutoSize = true;
             this.logoutLabel.BackColor = System.Drawing.Color.Transparent;
+            this.logoutLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.logoutLabel.Location = new System.Drawing.Point(756, 70);
             this.logoutLabel.Name = "logoutLabel";
             this.logoutLabel.Size = new System.Drawing.Size(68, 13);
             this.logoutLabel.TabIndex = 22;
             this.logoutLabel.Text = "Cerrar sesión";
             this.logoutLabel.Click += new System.EventHandler(this.logoutLabel_Click);
+            this.logoutLabel.MouseEnter += new System.EventHandler(this.logoutLabel_MouseEnter);
+            this.logoutLabel.MouseLeave += new System.EventHandler(this.logoutLabel_MouseLeave);
             // 
             // NurseForm
             // 
